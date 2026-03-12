@@ -21,7 +21,7 @@ public class Bodega {
     @Column(nullable = false)
     private String ubicacion;
     @Column(nullable = false)
-    private Long capacidad;
+    private Integer capacidad;
     @Column(nullable = false)
     private Long id_empleado;
 
