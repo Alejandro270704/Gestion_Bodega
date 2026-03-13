@@ -19,8 +19,6 @@ public class Auditoria {
     @Column(nullable = false)
     private Timestamp fecha;
     @Column(nullable = false)
-    private Long id_empleado;
-    @Column(nullable = false)
     private String tabla_afectada;
     @Column(nullable = false)
     private String tabla_antigua;

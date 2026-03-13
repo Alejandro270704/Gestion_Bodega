@@ -1,8 +1,6 @@
 package com.s1.gestion_bodegas.service;
 
-import com.s1.gestion_bodegas.dto.request.AuditoriaRequestDTO;
 import com.s1.gestion_bodegas.dto.request.EmpleadoRequestDTO;
-import com.s1.gestion_bodegas.dto.response.AuditoriaResponseDTO;
 import com.s1.gestion_bodegas.dto.response.EmpleadoResponseDTO;
 
 import java.util.List;

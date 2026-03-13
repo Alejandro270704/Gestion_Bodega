@@ -2,7 +2,6 @@ package com.s1.gestion_bodegas.dto.response;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 
-import java.math.BigDecimal;
 
 public record BodegaResponseDTO(
         @Schema(description = "se obtiene el ID de la bodega")

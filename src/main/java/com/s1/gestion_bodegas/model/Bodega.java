@@ -22,8 +22,6 @@ public class Bodega {
     private String ubicacion;
     @Column(nullable = false)
     private Integer capacidad;
-    @Column(nullable = false)
-    private Long id_empleado;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_empleado", nullable = false)

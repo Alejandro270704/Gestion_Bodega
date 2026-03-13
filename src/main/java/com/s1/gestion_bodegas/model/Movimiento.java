@@ -21,12 +21,6 @@ public class Movimiento {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private TipoMovimiento tipomovimiento;
-    @Column(nullable = false)
-    private Long id_empleado;
-    @Column(nullable = false)
-    private Long id_bodega_origen;
-    @Column(nullable = false)
-    private Long id_bodega_destino;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_empleado", nullable = false)

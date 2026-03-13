@@ -15,10 +15,6 @@ public class Detalle_movimiento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(nullable = false)
-    private Long id_movimiento;
-    @Column(nullable = false)
-    private Long id_producto;
-    @Column(nullable = false)
     private Integer cantidad;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_producto", nullable = false)
