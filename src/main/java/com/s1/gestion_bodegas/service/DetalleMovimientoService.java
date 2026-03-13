@@ -6,10 +6,10 @@ import com.s1.gestion_bodegas.dto.response.DetalleMovimientoResponseDTO;
 import java.util.List;
 
 public interface DetalleMovimientoService {
-    DetalleMovimientoResponseDTO guardarProducto(DetalleMovimientoRequestDTO dto);
+    DetalleMovimientoResponseDTO guardarDetalleMovimiento(DetalleMovimientoRequestDTO dto);
 
-    DetalleMovimientoResponseDTO actualizarProducto(DetalleMovimientoRequestDTO dto, Long id);
-    void eliminarProducto(Long id);
+    DetalleMovimientoResponseDTO actualizarDetalleMovimiento(DetalleMovimientoRequestDTO dto, Long id);
+    void eliminarDetalleMovimiento(Long id);
     List<DetalleMovimientoResponseDTO> buscarTodos();
     List<DetalleMovimientoResponseDTO> buscarcantidadmenor (Integer cantidad);
 }

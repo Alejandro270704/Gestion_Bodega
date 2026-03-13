@@ -29,7 +29,7 @@ public class BodegaServiceImpl implements BodegaService {
     private final  PersonaRepository PersonaRepository;
     private final PersonaMapper PersonaMapper;
     @Override
-    public BodegaResponseDTO guardarProducto(BodegaRequestDTO dto) {
+    public BodegaResponseDTO guardarBodega(BodegaRequestDTO dto) {
 
         Empleado e= EmpleadoRepository.findById(dto.id_empleado()).orElseThrow(()->new RuntimeException("No existe dicho empleado"));
         Bodega b= BodegaMapper.DTOAEntidad(dto,e);
@@ -41,7 +41,7 @@ public class BodegaServiceImpl implements BodegaService {
     }
 
     @Override
-    public BodegaResponseDTO actualizarProducto(BodegaRequestDTO dto, Long id) {
+    public BodegaResponseDTO actualizarBodega(BodegaRequestDTO dto, Long id) {
         Bodega b = BodegaRepository.findById(id).orElseThrow(() -> new RuntimeException("No existe la bodega"));
         Empleado e = EmpleadoRepository.findById(dto.id_empleado()).orElseThrow(() -> new RuntimeException("No existe el empleado"));
         Persona p=PersonaRepository.findById(dto.id_empleado()).orElseThrow(()->new RuntimeException("No existe dicho empleado"));
@@ -53,7 +53,7 @@ public class BodegaServiceImpl implements BodegaService {
     }
 
     @Override
-    public void eliminarProducto(Long id) {
+    public void eliminarBodega(Long id) {
         Bodega b = BodegaRepository.findById(id).orElseThrow(() -> new RuntimeException("No existe la bodega"));
         BodegaRepository.delete(b);
     }

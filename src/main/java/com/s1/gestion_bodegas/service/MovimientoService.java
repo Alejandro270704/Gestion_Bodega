@@ -6,10 +6,10 @@ import com.s1.gestion_bodegas.dto.response.MovimientoResponseDTO;
 import java.util.List;
 
 public interface MovimientoService {
-    MovimientoResponseDTO guardarProducto(MovimientoRequestDTO dto);
+    MovimientoResponseDTO guardarMovimiento(MovimientoRequestDTO dto);
 
-    MovimientoResponseDTO actualizarProducto(MovimientoRequestDTO dto, Long id);
-    void eliminarProducto(Long id);
+    MovimientoResponseDTO actualizarMovimiento(MovimientoRequestDTO dto, Long id);
+    void eliminarMovimiento(Long id);
     List<MovimientoResponseDTO> buscarTodos();
     List<MovimientoResponseDTO> buscarentrefecha (String fechaInicio, String fechaFin);
 }

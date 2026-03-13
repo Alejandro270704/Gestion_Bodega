@@ -31,7 +31,7 @@ public class AuditoriaServiceImpl implements AuditoriaService {
     private final PersonaRepository PersonaRepository;
     private final PersonaMapper PersonaMapper;
     @Override
-    public AuditoriaResponseDTO guardarProducto(AuditoriaRequestDTO dto) {
+    public AuditoriaResponseDTO guardarAuditoria(AuditoriaRequestDTO dto) {
         Empleado e= EmpleadoRepository.findById(dto.id_empleado()).orElseThrow(()->new RuntimeException("No existe dicho empleado"));
         Persona p=PersonaRepository.findById(dto.id_empleado()).orElseThrow(()->new RuntimeException("No existe dicho empleado"));
         Auditoria A= AuditoriaMapper.DTOAEntidad(dto,e);
@@ -42,7 +42,7 @@ public class AuditoriaServiceImpl implements AuditoriaService {
     }
 
     @Override
-    public AuditoriaResponseDTO actualizarProducto(AuditoriaRequestDTO dto, Long id) {
+    public AuditoriaResponseDTO actualizarAuditoria(AuditoriaRequestDTO dto, Long id) {
         Auditoria A= AuditoriaRepository.findById(id).orElseThrow(()->new RuntimeException("Error, no existe dicha auditoria a actualizar"));
         Persona p=PersonaRepository.findById(dto.id_empleado()).orElseThrow(()->new RuntimeException("No existe dicho empleado"));
         Empleado e = EmpleadoRepository.findById(dto.id_empleado()).orElseThrow(()->new RuntimeException("Error, no existe dicha persona a actualizar"));

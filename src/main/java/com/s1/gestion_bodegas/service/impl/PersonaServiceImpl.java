@@ -17,14 +17,14 @@ public class PersonaServiceImpl implements PersonaService {
     private final PersonaMapper PersonaMapper;
     private final PersonaRepository PersonaRepository;
     @Override
-    public PersonaResponseDTO guardarProducto(PersonaRequestDTO dto) {
+    public PersonaResponseDTO guardarPersona(PersonaRequestDTO dto) {
         Persona p=PersonaMapper.DTOAEntidad(dto);
         Persona p_insertada=PersonaRepository.save(p);
         return PersonaMapper.entidadADTO(p_insertada);
     }
 
     @Override
-    public PersonaResponseDTO actualizarProducto(PersonaRequestDTO dto, Long id) {
+    public PersonaResponseDTO actualizarPersona(PersonaRequestDTO dto, Long id) {
         Persona p=PersonaRepository.findById(id).orElseThrow(()->new RuntimeException("No existe dicha persona"));
         PersonaMapper.actualizarEntidadDesdeDTO(p,dto);
         Persona p_actualizada=PersonaRepository.save(p);
@@ -32,7 +32,7 @@ public class PersonaServiceImpl implements PersonaService {
     }
 
     @Override
-    public void eliminarProducto(Long id) {
+    public void eliminarPersona(Long id) {
         Persona p=PersonaRepository.findById(id).orElseThrow(()->new RuntimeException("No existe dicha persona"));
         PersonaRepository.delete(p);
     }
@@ -44,7 +44,7 @@ public class PersonaServiceImpl implements PersonaService {
     }
 
     @Override
-    public List<PersonaResponseDTO> buscarProductosnombre(String nombre) {
+    public List<PersonaResponseDTO> buscarPersonanombre(String nombre) {
         List<Persona> personas= PersonaRepository.findByNombreContaining(nombre);
         return personas.stream().map(PersonaMapper::entidadADTO).toList();
     }

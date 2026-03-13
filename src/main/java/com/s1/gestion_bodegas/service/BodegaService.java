@@ -6,10 +6,10 @@ import com.s1.gestion_bodegas.dto.response.BodegaResponseDTO;
 import java.util.List;
 
 public interface BodegaService {
-    BodegaResponseDTO guardarProducto(BodegaRequestDTO dto);
+    BodegaResponseDTO guardarBodega(BodegaRequestDTO dto);
 
-    BodegaResponseDTO actualizarProducto(BodegaRequestDTO dto, Long id);
-    void eliminarProducto(Long id);
+    BodegaResponseDTO actualizarBodega(BodegaRequestDTO dto, Long id);
+    void eliminarBodega(Long id);
     List<BodegaResponseDTO> buscarTodos();
     List<BodegaResponseDTO> buscarcapacidadBajo (Integer capacidad);
 }

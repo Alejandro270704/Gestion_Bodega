@@ -35,7 +35,7 @@ public class MovimientoServiceImpl implements MovimientoService {
     private final EmpleadoMapper empleadoMapper;
     private final BodegaMapper bodegaMapper;
     @Override
-    public MovimientoResponseDTO guardarProducto(MovimientoRequestDTO dto) {
+    public MovimientoResponseDTO guardarMovimiento(MovimientoRequestDTO dto) {
         Empleado e = empleadoRepository.findById(dto.id_empleado()).orElseThrow(() -> new RuntimeException("No existe el empleado"));
         Bodega b = bodegaRepository.findById(dto.id_bodega_origen()).orElseThrow(() -> new RuntimeException("No existe la bodega"));
         Persona p = PersonaRepository.findById(dto.id_empleado()).orElseThrow(() -> new RuntimeException("No existe el empleado"));
@@ -48,7 +48,7 @@ public class MovimientoServiceImpl implements MovimientoService {
     }
 
     @Override
-    public MovimientoResponseDTO actualizarProducto(MovimientoRequestDTO dto, Long id) {
+    public MovimientoResponseDTO actualizarMovimiento(MovimientoRequestDTO dto, Long id) {
         Movimiento m = movimientoRepository.findById(id).orElseThrow(() -> new RuntimeException("No existe el movimiento"));
         Empleado e = empleadoRepository.findById(dto.id_empleado()).orElseThrow(() -> new RuntimeException("No existe el empleado"));
         Bodega b = bodegaRepository.findById(dto.id_bodega_origen()).orElseThrow(() -> new RuntimeException("No existe la bodega"));
@@ -62,7 +62,7 @@ public class MovimientoServiceImpl implements MovimientoService {
     }
 
     @Override
-    public void eliminarProducto(Long id) {
+    public void eliminarMovimiento(Long id) {
         Movimiento m = movimientoRepository.findById(id).orElseThrow(() -> new RuntimeException("No existe el movimiento"));
         movimientoRepository.delete(m);
     }
